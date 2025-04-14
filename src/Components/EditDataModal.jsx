@@ -11,8 +11,8 @@ const EditDataModal = ({ entry, onClose, onSubmit }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-      <div className="bg-white text-black p-4 rounded shadow w-80">
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+      <div className="bg-white text-black rounded-xl p-6 w-full max-w-md z-50 shadow-lg">
         <h2 className="text-lg font-bold mb-2">Let's see what you want to change!</h2>
         <input type="date" className="w-full mb-2" value={entry.date} disabled />
         <input type="number" placeholder="Enter Today's Calorie Intake" className="w-full mb-2" value={intake} onChange={(e) => setIntake(e.target.value)} />
