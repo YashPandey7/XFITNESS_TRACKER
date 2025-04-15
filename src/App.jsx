@@ -37,6 +37,16 @@ function App() {
     setHealthData(newData);
   };
 
+  const today = new Date();
+  const sevenDaysAgo = new Date();
+  sevenDaysAgo.setDate(today.getDate() - 6);
+
+  const weeklyData = healthData.filter((item) => {
+    const itemDate = new Date(item.date);
+    return itemDate >= sevenDaysAgo && itemDate <= today;
+  });
+
+
   return (
     <div className="p-4 bg-gray-900 text-white min-h-screen">
       <Header onAdd={() => setShowAddModal(true)} />
@@ -58,7 +68,7 @@ function App() {
 
       <div className="grid md:grid-cols-2 gap-4 mt-4">
         <div>
-          {healthData.length > 0 && (
+          {weeklyData.length > 0 && (
             <BarChartComponent data={healthData} />
           )}
         </div>
