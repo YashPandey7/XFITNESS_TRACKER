@@ -7,7 +7,7 @@ const StatsList = ({ data, onEdit, onDelete }) => (
       <div key={item.date} className="bg-white text-black p-4 rounded mb-2 flex justify-between items-center">
         <div>
           <p className="font-semibold">{item.desc}</p>
-          <p>Calories intake = {item.intake} &nbsp; Calories Burned = {item.burned}</p>
+          <p>Calories Intake = {item.intake} &nbsp; Calories Burned = {item.burned}</p>
           <p className="text-orange-500 font-semibold">{item.date}</p>
         </div>
         <div className="space-x-2">
